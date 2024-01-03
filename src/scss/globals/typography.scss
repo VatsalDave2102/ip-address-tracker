@@ -1,0 +1,17 @@
+@use "../utils/" as *;
+html {
+  font-size: rem(16);
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  color: var(--dark-blue);
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}

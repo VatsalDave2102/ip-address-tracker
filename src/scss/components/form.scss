@@ -1,0 +1,43 @@
+@use "../utils/" as *;
+.ip__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: rem(25);
+
+  @include respond-to(sm) {
+    margin-inline: auto;
+    max-width: rem(500);
+  }
+
+  &__input {
+    flex: 10 10;
+    font-size: rem(18);
+    font-weight: 500;
+    font-family: "Rubik", sans-serif;
+    color: var(--very-dark-gray);
+    border: none;
+    border-top-left-radius: rem(20);
+    border-bottom-left-radius: rem(20);
+    outline: none;
+    background: white;
+    padding: rem(20);
+  }
+
+  &__button {
+    flex: 1 1;
+    padding: rem(30.4);
+    background: black;
+    border: none;
+    border-top-right-radius: rem(20);
+    border-bottom-right-radius: rem(20);
+    font-size: rem(18);
+    cursor: pointer;
+    background-image: url("../../../images/icon-arrow.svg");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    &:hover {
+      background-color: var(--very-dark-gray);
+    }
+  }
+}
