@@ -28,15 +28,40 @@
       <h1 class="header">IP Address Tracker</h1>
     </header>
 
+    <!-- Input form -->
     <form action="" class="ip__form">
       <input
         type="text"
         class="ip__form__input"
-        placeholder="Enter IP address"
+        placeholder="Search for any IP address or domain"
       />
       <button type="submit" class="ip__form__button"></button>
     </form>
 
+    <!-- Info display card -->
+    <div class="ip__info__wrapper">
+      <div class="ip__info">
+        <div class="ip__info__address">
+          <p>IP Address</p>
+          <h3>192.212.171.122</h3>
+        </div>
+
+        <div class="ip__info__location">
+          <p>Location</p>
+          <h3>London, UK 000000</h3>
+        </div>
+
+        <div class="ip__info__timezone">
+          <p>Timezone</p>
+          <h3>GMT +00:00</h3>
+        </div>
+
+        <div class="ip__info__isp">
+          <p>ISP</p>
+          <h3>Spacex Starlink</h3>
+        </div>
+      </div>
+    </div>
     <div id="map"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>

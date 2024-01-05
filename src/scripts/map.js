@@ -6,21 +6,19 @@ export function updateHeight() {
   const totalHeight = window.innerHeight;
   const bodyHeight = document.body.offsetHeight;
 
-  console.log(totalHeight, bodyHeight);
   //   get map element
   const mapContainer = document.getElementById("map");
 
   //   update map height
   const remainingHeight = totalHeight - bodyHeight;
   mapContainer?.style.setProperty("height", `${remainingHeight}px`);
-  console.log(remainingHeight);
 }
 
 updateHeight();
 window.addEventListener("resize", updateHeight);
 
 // creating map
-let map = L.map("map").setView([51.505, -0.09], 13);
+let map = L.map("map", { zoomControl: false }).setView([51.505, -0.09], 13);
 
 // adding marker on map
 let marker = L.marker([51.5, -0.09]).addTo(map).openPopup();

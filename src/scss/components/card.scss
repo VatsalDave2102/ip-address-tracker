@@ -1,0 +1,77 @@
+@use "../utils/" as *;
+
+.ip__info__wrapper {
+  // mobile view will have fixed display
+  position: relative;
+  width: 80%;
+  margin-inline: auto;
+
+  //   for desktop view
+  @include respond-to(sm) {
+    width: 90%;
+    max-width: rem(1100);
+  }
+}
+
+.ip__info {
+  // to center the card
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 8%);
+
+  //   to view it over map
+  z-index: 1;
+  width: 100%;
+  background-color: white;
+
+  //   setting flex column for mobile and row for desktop
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  //   add padding
+  padding-block: rem(25);
+  border-radius: rem(15);
+  gap: rem(20);
+
+  h3 {
+    margin: 0;
+  }
+
+  p {
+    font-size: rem(12);
+    font-weight: 500;
+    letter-spacing: rem(1);
+    text-transform: uppercase;
+    color: var(--dark-gray);
+    margin-bottom: rem(8);
+  }
+
+  //   for desktop view
+  @include respond-to(sm) {
+    flex-direction: row;
+    justify-content: space-evenly;
+    transform: translate(-50%, 30%);
+    width: 100%;
+    align-items: flex-start;
+    padding-inline: rem(10);
+    padding-block: rem(35);
+    text-align: start;
+  }
+
+  @include respond-to(md) {
+    h3 {
+      font-size: rem(23);
+    }
+
+    &__location,
+    &__timezone,
+    &__isp {
+      border-left: 1px solid var(--dark-gray);
+      padding-inline-start: rem(15);
+    }
+  }
+}
