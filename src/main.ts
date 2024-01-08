@@ -19,7 +19,9 @@ export async function trackAddress(ip: string) {
   showSpinner(submitButton);
   try {
     const response = await fetch(
-      `https://geo.ipify.org/api/v2/country,city?apiKey=at_tohtepoqaaBvuJsPmKF1WVqGeZM2g&ipAddress=${ip}`
+      `https://geo.ipify.org/api/v2/country,city?apiKey=${
+        import.meta.env.VITE_IPIFY_API_KEY
+      }&ipAddress=${ip}`
     );
 
     const ipInfo = await response.json();
