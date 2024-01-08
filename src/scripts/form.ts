@@ -23,6 +23,7 @@ if (form) {
       try {
         ipDetails = (await trackAddress(ipAddress as string)) as IPDetails;
         displayDetails(ipDetails);
+        localStorage.setItem("location", JSON.stringify(ipDetails));
       } catch (error) {
         console.error("Error fetching IP info", error);
       }
