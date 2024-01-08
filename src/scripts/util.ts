@@ -19,9 +19,8 @@ window.addEventListener("resize", updateHeight);
 export function debounce(func: Function, delay: number) {
   let timeOutId: number;
 
-  return function (...args: any[]) {
+  return function (this: any, ...args: any[]) {
     clearTimeout(timeOutId);
-
     timeOutId = setTimeout(() => {
       func.apply(this, args);
     }, delay);
